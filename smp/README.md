@@ -231,11 +231,11 @@
 
 #### 3.3.1 服务管理系统
 
-​	http://192.168.56.222:8998/visual/smp-show/index.html
+​	http://IP:PORT/visual/smp-show/index.html
 
 #### 3.3.2 服务管理系统API接口
 
-​	http://192.168.56.222:8998/swagger-ui.html
+​	http://IP:PORT/swagger-ui.html
 
 
 
