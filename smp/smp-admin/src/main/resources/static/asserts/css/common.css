@@ -1,0 +1,201 @@
+/* ====================== common =================== */
+* {
+    outline: none;
+}
+body {
+    min-width: 1200px;
+    font-size: 14px;
+    color: #333;
+    font-family: Helvetica,Arial,"Helvetica Neue","Hiragino Sans GB","Microsoft YaHei",Simsun,sans-self;
+    -webkit-text-size-adjust: 100%;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+.hide {
+    display: none;
+}  
+.show {
+    display: block;
+}
+
+.common-btn{
+    text-align: center;
+    color: #fff;
+    background: -webkit-linear-gradient(#75abf8,#478ae9);
+	background: -o-linear-gradient(#75abf8,#478ae9);
+	background: -moz-linear-gradient(#75abf8,#478ae9);
+    background: linear-gradient(#75abf8,#478ae9);
+    border-radius: 4px !important;
+    cursor: pointer;
+}
+
+/* ====================== page-content =================== */
+.map-online{
+    position: relative;
+}
+.page-content {
+    position: relative;
+    margin-left: 0;
+    float: none;
+}
+#outerDiv {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 5px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+#chartGraph {
+    display: none;
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    width: 450px;
+    height: 350px;
+    z-index: 1000;
+}
+
+/* ================ search-panel =============== */
+.search-panel {
+    position: absolute;
+}
+
+.city-select-panel {
+    display: none;
+}
+
+
+
+/* ================ footer-info =============== */
+.footer-info {
+    position: absolute;
+    z-index: 100;
+    bottom: 6px;
+    left: 10px;
+    font-size: 12px;
+}
+
+/* ================ city-select =============== */
+.city-select-btn{
+    cursor: pointer;
+}
+.city-select{
+    z-index: 1000;
+    position: absolute;
+    top: 20px;
+    left: 449px;
+    width: 80px;
+    height: 42px;
+    line-height: 42px;
+}
+.city-select a.place{
+    color: #fff;
+}
+.place-board{
+    background:#fff;
+    border:1px solid #e5e5e5; 
+    width:400px;
+    height:420px;
+    z-index:999;
+    display:none; 
+    padding:10px;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 10px;
+ }
+ .place-board p{
+     color: #333;
+     line-height: 24px;
+ }
+ .place-board p a{
+    color: #0d638f;
+ }
+.place-board #searchCity{
+    margin-top: 10px;
+}
+.place-board #cityInput{
+    float:left;
+    width:200px;
+    border: 1px solid #70a8f8;
+    border-radius: 4px 0 0 4px !important;
+    box-shadow: inset 1px 2px 2px rgba(0,0,0,.15);
+}
+.place-board #cityInputBtn{
+    vertical-align:middle;
+    border-radius: 0 4px 4px 0 !important;
+    color: #fff;
+}
+.place-board #cityInputBtn:active{
+    background: -webkit-linear-gradient(#75abf8,#478ae9);
+	background: -o-linear-gradient(#75abf8,#478ae9);
+	background: -moz-linear-gradient(#75abf8,#478ae9);
+    background: linear-gradient(#75abf8,#478ae9);
+}
+.place-board .nav{
+    margin-bottom: 0px !important;
+}
+.place-board #tabProvinceList{
+    height: 250px;
+}
+.place-board #tabCityPoint{
+    text-align: center;
+    line-height: 3;
+    padding: 0;
+}
+.place-board #tabCityList{
+    margin-top: 0px;
+    height: 230px;
+}
+
+ /* ================ map-service =============== */
+ .map-service-btn{
+    position: absolute;
+    left: 542px;
+    top: 20px;
+    width: 114px;
+    height: 42px;
+    z-index: 1000;
+    line-height: 42px;
+     color: white;
+ }
+ .map-service-panel{
+    position: absolute;
+    left: 450px;
+    top: 75px;
+    width: 300px;
+    min-height: 42px;
+    z-index: 1000;
+    padding: 10px;
+    line-height: 24px;
+    background: #fff;
+    display: none;
+ }
+ /*.map-service-panel span, .map-service-panel a{*/
+     /*margin-left: 10px;*/
+ /*}*/

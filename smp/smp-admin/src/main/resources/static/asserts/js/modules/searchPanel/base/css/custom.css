@@ -1,0 +1,163 @@
+div,ul, ol, li, h1, h2, h3, h4, h5, h6{
+	margin: 0;
+	padding: 0;
+}
+
+.searchbox-content .searchbox-content-common {
+	box-sizing: border-box;
+	float: left;
+	width: 195px;
+	height: 38px;
+}
+
+#left-panel {
+	height: 863px;
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	overflow: hidden;
+	font-family:MSYH;
+}
+
+#cards-level0 {
+	z-index: 999;
+}
+#cards-level1 {
+	z-index: 999;
+}
+#cards-level2 {
+	z-index: 999;
+}
+
+.cardlist .card {
+	pointer-events: auto;
+	width: 100%;
+	margin-top: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	background: #fff;
+	box-shadow: 1px 2px 1px rgba(0,0,0,.15);
+	overflow: auto;
+	overflow-x: hidden;
+	position: relative;
+	border-radius: 2px;
+	-webkit-transition: max-height .5s;
+	transition: max-height .5s;
+	border-bottom: 1px solid #dddddd;
+	border-right: 4px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-top: 1px solid #dddddd;
+}
+
+.cardlist {
+	width: 368px;
+	position: relative;
+	z-index: 0;
+}
+
+.BgcBlue{
+	background-color: #0B9AD6;
+}
+
+.BgcWhite{
+	background-color: white;
+}
+
+.MarginTop25{
+	margin-top: 25px !important;
+}
+
+/* .attendionTip{
+	position: fixed;
+	left: 40%;
+	height: 26px;
+	width: 300px;
+	background-color: rgba(0, 171, 169, 1);
+	font-size: 16px;
+	text-align: center;
+	top: 0px;
+	z-index: 1000;
+} 
+
+.attendionTipOpen{
+	top: 123px !important;
+}
+
+.attendionTipClose{
+	top: 93px !important;
+} */
+
+/* 菜单显示与隐藏动画 */
+.menuFadeIn {
+	animation-name: menuFadeIn;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+
+	-moz-animation-name: menuFadeIn;
+	-moz-animation-duration: 1s;
+	-moz-animation-fill-mode: forwards;
+
+	-webkit-animation-name: menuFadeIn;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.menuFadeOut {
+	animation-name: menuFadeOut;
+	animation-duration: 0s;
+	animation-fill-mode: forwards;
+
+	-moz-animation-name: menuFadeOut;
+	-moz-animation-duration: 0s;
+	-moz-animation-fill-mode: forwards;
+
+	-webkit-animation-name: menuFadeOut;
+	-webkit-animation-duration: 0s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes  menuFadeIn
+{
+	from {  opacity: 0; }
+	to   {  opacity: 1; }
+}
+
+@keyframes  menuFadeIn
+{
+	from {  opacity: 0; }
+	to   {  opacity: 1; }
+}
+
+@-moz-keyframes  menuFadeIn
+{
+	from {  opacity: 0; }
+	to   {  opacity: 1; }
+}
+
+@-ms-keyframes  menuFadeIn
+{
+	from {  opacity: 0; }
+	to   {  opacity: 1; }
+}
+
+@-webkit-keyframes  menuFadeOut
+{
+	from {  opacity: 1; }
+	to   {  opacity: 0; }
+}
+
+@keyframes  menuFadeOut
+{
+	from {  opacity: 1; }
+	to   {  opacity: 0; }
+}
+@-moz-keyframes  menuFadeOut
+{
+	from {  opacity: 1; }
+	to   {  opacity: 0; }
+}
+@-ms-keyframes  menuFadeOut
+{
+	from {  opacity: 1; }
+	to   {  opacity: 0; }
+}

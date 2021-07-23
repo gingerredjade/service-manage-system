@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.smp.admin</groupId>
+	<artifactId>smp-admin</artifactId>
+	<version>1.0.0</version>
+	<inceptionYear>2020</inceptionYear>
+	<packaging>jar</packaging>
+
+	<name>smp-admin</name>
+	<description>smp-admin project for smp</description>
+
+	<!-- Spring Boot 父引用 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.6.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+		<logback-gelf.version>2.0.0</logback-gelf.version>
+		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+	</properties>
+
+	<dependencies>
+
+		<!--smp通用模块-->
+		<dependency>
+			<groupId>com.smp.common</groupId>
+			<artifactId>smp-common</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+
+		<!--监控和管理生产环境的模块，暴露各种指标-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- 依赖 Spring Cloud Netflix Eureka Client -->
+		<!--<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-quartz</artifactId>
+			<version>2.0.4.RELEASE</version>
+		</dependency>
+
+		<!-- spring aop -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.restdocs</groupId>
+			<artifactId>spring-restdocs-mockmvc</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!--Spring Boot默认支持的logback作为标准日志输出-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.siegmar</groupId>
+			<artifactId>logback-gelf</artifactId>
+			<version>${logback-gelf.version}</version>
+		</dependency>
+
+		<!--核心web模块-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!--引入jquery-webjar.在访问的时候只需要写webjars下面资源的名称即可-->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.47</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/dom4j-1.6.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.6</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/jaxen-1.1.6.jar</systemPath>
+		</dependency>
+
+		<!--视图模板Thymeleaf依赖 Start-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>2.0.4.RELEASE</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/spring-boot-starter-thymeleaf-2.0.4.RELEASE.jar</systemPath>
+		</dependency>
+
+
+		<!--Swagger依赖包-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.7.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/springfox-swagger-ui-2.7.0.jar</systemPath>
+		</dependency>
+		<!--Swagger end-->
+
+		<!--JPA start-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>2.1.6.RELEASE</version>
+		</dependency>
+		<!--JPA end-->
+
+		<!--mysql start-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.17</version>
+		</dependency>
+		<!--mysql end-->
+
+		<!--hibernate start-->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.0.11.Final</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/hibernate-core-5.0.11.Final.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/hibernate-entitymanager-5.0.11.Final.jar</systemPath>
+			<version>5.0.11.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpa</artifactId>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/hibernate-jpa-2.1-api-1.0.0.Final.jar</systemPath>
+			<version>1.0.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/hibernate-validator-5.2.4.Final.jar</systemPath>
+			<version>5.2.4.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-commons</artifactId>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/hibernate-commons-annotations-5.0.1.Final.jar</systemPath>
+			<version>5.0.1.Final</version>
+		</dependency>
+		<!--hibernate end-->
+
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>2.7.7</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/antlr-2.7.7.jar</systemPath>
+		</dependency>
+
+
+
+
+		<!--dm start-->
+		<dependency>
+			<groupId>dm.jdbc</groupId>
+			<artifactId>dm-jdbc-driver</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/Dm7JdbcDriver17.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>dm.jdbc</groupId>
+			<artifactId>dm-jdbc-dialect</artifactId>
+			<version>1.7</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/DmDialect-for-hibernate5.0.jar</systemPath>
+		</dependency>
+		<!--dm end-->
+
+		<!-- spring security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>2.1.7.RELEASE</version>
+		</dependency>
+
+		<!-- jwt -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/jjwt-0.9.0.jar</systemPath>
+		</dependency>
+
+		<!--阿里巴巴连接池Druid-->
+
+
+		<!-- shiro权限管理框架 -->
+		<!--<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+			<version>1.5.3</version>
+		</dependency>-->
+
+		<!-- kaptcha -->
+		<dependency>
+			<groupId>com.github.axet</groupId>
+			<artifactId>kaptcha</artifactId>
+			<version>0.0.9</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/kaptcha-0.0.9.jar</systemPath>
+		</dependency>
+
+		<!-- ehcache -->
+		<dependency>
+			<groupId>org.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>3.5.2</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/ehcache-3.5.2.jar</systemPath>
+		</dependency>
+
+		<!-- commons-beanutils -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.3</version>
+		</dependency>
+
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<fork>true</fork>
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+</project>

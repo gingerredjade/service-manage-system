@@ -1,0 +1,576 @@
+@charset "UTF-8";
+
+/*!
+* reader content v1.0
+*
+* Copyright 2015
+*
+* Designed and built by JiangHongyu
+*/
+
+/* 公共部分
+   ========================================================================== */
+   
+/**
+ * ul li set.
+ */
+ul {
+	padding:0;
+	margin:0;
+}
+ul li {
+	list-style-type:none;
+}
+
+/**
+* 优化显示文本,正式使用时将其赋给html样式
+* 注：IE/Edge没有text-rendering支持
+*/
+.text-optimize {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/**
+ * 表格单元格等宽.
+ */
+.table-calendar {
+	table-layout: fixed;
+}
+
+/**
+ * 使用属性选择器用于空链接.
+ * 当<a>元素没有文本值，但href属性有链接的时候显示链接
+ */
+a[href^="http"]:empty::before {
+	content: attr(href);
+}
+
+/**
+* 全屏背景
+*/
+/*html {
+	background: url('') no-repeat center center fixed;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+}*/
+
+/**
+* 垂直居中内容.
+*/
+.vertical-align-center {
+	min-height: 6.5em;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/**
+* 设置自定义字体.
+*/
+/*@font-face {
+	font-family: 'MyWebFont';
+	src: url('webfont.eot');*/ /* IE9 Compat Modes */
+	/*src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	/*url('webfont.woff') format('woff'), /* Modern Browsers */
+	/*url('webfont.ttf') format('truetype'), /* Safari,Android,iOS */
+	/*url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+/*}
+body {
+	font-family: 'MyWebFont',Arial,sans-serif;
+}*/
+
+/**
+ * 网站页脚部分.
+ */
+#footer {
+	background: #000;
+	border-top: 1px solid #e2e4e6;
+	font-size: 14px;
+	color: #787d82;
+	min-width: 620px;
+	-moz-box-shadow: 0 -3px 6px #666;
+	-webkit-box-shadow: 0 -3px 6px #666;
+	-o-box-shadow: 0 -3px 6px #666;
+	-ms-box-shadow: 0 -3px 6px #666;
+	box-shadow: 0 -3px 6px #666;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	font-size: 12px;
+	text-align: center;
+	padding: 4px 0;
+	z-index: 100;
+}
+
+/**
+ * 阴影.
+ */
+.shadow {
+	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	-ms-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	-o-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/**
+ * 隐藏文本.
+ */
+.text-hide {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	/*font: 0/0 a;注掉的这一组也可以实现文本隐藏
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;*/
+}
+
+/**
+ * 文字截断.
+ */
+.autowrap {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+/**
+ * 处理文字溢出和破字.
+ */
+.text-ellipsis {
+	overflow: hidden; /* 不允许出现滚动条 */
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis; /* 显示省略号来代表被修剪的文本（clip:修剪文本；string：用给定的字符串来代表被修剪的文本） */
+	white-space: nowrap; /* 文本不进行换行 */
+}
+
+/**
+ * 事件穿透 ，文字不能被点击，其父元素不再监听鼠标事件.
+ * 该属性会影响cursor鼠标操作样式的变化
+ */
+.pointer-events {
+	-moz-pointer-events: none;
+	-webkit-pointer-events: none;
+	-o-pointer-events: none;
+	pointer-events: none;
+}
+
+/**
+ * 清除浮动的方法.
+ */
+.clearfix:after {
+	content: '\0020';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* IE 6/7 */
+.clearfix {
+	*zoom: 1;
+}
+
+/**
+* 跨浏览器设置透明度.
+*/
+.transparent {
+	filter: alpha(opacity=50); /* IE */
+	-khtml-opacity: 0.5; /* 老版本的Safari */
+	-moz-opacity: 0.5; /* Mozilla,Netscape */
+	opacity: 0.5; /* fx,Safari,Opera */
+}
+
+/**
+ * 设置CSS3中placeholder的字体颜色.
+ */
+/* Mozilla Firefox 4-18 */
+input:-moz-placeholder, 
+textarea:-moz-placeholder {	
+	color: #c8cdd2;
+}
+/* Mozilla Firefox 19+ */
+input::-moz-placeholder, 
+textarea::-moz-placeholder {	
+	color: #c8cdd2;
+	opacity: 1;
+}
+/* Intenet Explorer 10+ */
+input:-ms-input-placeholder, 
+textarea:-ms-input-placeholder {	
+	color: #c8cdd2;
+}
+/* Webkit Browsers */
+input::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder {	
+	color: #c8cdd2;
+}
+/* default */
+input.placeholder, 
+textarea.placeholder {	
+	color: #c8cdd2;
+}
+
+/**
+* CSS3斑马条纹.
+*/
+/*tbody tr:nth-child(odd) {
+	background-color: #ccc;
+}*/
+
+/**
+* CSS3盒子模型内部阴影
+*/
+.box-shadow-inset {
+	-moz-box-shadow: inset 2px 0 4px #000;
+	-webkit-box-shadow: inset 2px 0 4px #000;
+	-o-box-shadow: inset 2px 0 4px #000;
+	box-shadow: inset 2px 0 4px #000;
+}
+
+/**
+* CSS3盒子模型外部阴影
+*/
+.box-shadow-outset {
+	-moz-box-shadow: 0 2px 2px -2px rgba(0,0,0,0.52);
+	-webkit-box-shadow: 0 2px 2px -2px rgba(0,0,0,0.52);
+	-o-box-shadow: 0 2px 2px -2px rgba(0,0,0,0.52);
+	box-shadow: 0 2px 2px -2px rgba(0,0,0,0.52);
+}
+
+/**
+ * 设置失效、只读按钮样式.
+ */
+input[disabled], 
+input[readonly], 
+input.disabled {
+	cursor: default;
+	opacity: 1;
+	/*background-color: #edf1f2;*/
+}
+
+/**
+ * firefox图片不存在时显示小红叉.
+ */
+.image-ff-unexist {
+	-moz-force-broken-image-icon: 1;
+} 
+ 
+/**
+ * 优化显示文本（连字符）.
+ */
+.text-rendering {
+	text-rendering: optimizelegibility;
+}
+
+/**
+* 自定义文本选择的高亮效果.
+*/
+::selection {background: #75b9e6;}
+::-moz-selection {background: #75b9e6;}
+::-webkit-selection {background: #75b9e6;}
+
+/**
+* 锚链接伪类的设置.
+*/
+/** 
+a:link, a:visited{
+	color: #14191e;
+}
+a:hover, a:active{
+	color: #cc0000;
+} **/
+
+
+/**
+* 自定义段落首字母.
+*/
+/*p:first-letter {
+	display: block;
+	margin: 5px 0 0 5px;
+	float: left;
+	color: #ff3366;
+	font-size: 5.4em;
+	font-family: Georgia, Times New Roman, serif;
+}*/
+
+/**
+* 给浏览器滚动条加上颜色.
+*/
+/*body {
+	scrollbar-face-color: #666666;
+	scrollbar-shadow-color: #ffffff;
+	scrollbar-highlight-color: #fff;
+	scrollbar-3dlight-color: #3366cc;
+	scrollbar-darkshadow-color: #666;
+	scrollbar-track-color: #eee;
+	scrollbar-arrow-color: #666;
+}*/
+
+/**
+* 文本动画.
+*/
+.text-animation-control {
+	animation: 6s linear 0s normal none infinite change;
+	-moz-animation: 6s linear 0s normal none infinite change;
+	-o-animation: 6s linear 0s normal none infinite change;
+	-webkit-animation: 6s linear 0s normal none infinite change;
+}
+@-webkit-keyframes change {
+	0% {margin-top: 0;}
+	15% {margin-top: 0;}
+	25% {margin-top: -40px;}
+	40% {margin-top: -40px;}
+	50% {margin-top: -80px;}
+	65% {margin-top: -80px;}
+	75% {margin-top: -40px;}
+	85% {margin-top: -40px;}
+	100% {margin-top: 0;}
+}
+@-moz-keyframes change {
+	0% {margin-top: 0;}
+	15% {margin-top: 0;}
+	25% {margin-top: -40px;}
+	40% {margin-top: -40px;}
+	50% {margin-top: -80px;}
+	65% {margin-top: -80px;}
+	75% {margin-top: -40px;}
+	85% {margin-top: -40px;}
+	100% {margin-top: 0;}
+}
+@-o-keyframes change {
+	0% {margin-top: 0;}
+	15% {margin-top: 0;}
+	25% {margin-top: -40px;}
+	40% {margin-top: -40px;}
+	50% {margin-top: -80px;}
+	65% {margin-top: -80px;}
+	75% {margin-top: -40px;}
+	85% {margin-top: -40px;}
+	100% {margin-top: 0;}
+}
+@keyframes change {
+	0% {margin-top: 0;}
+	15% {margin-top: 0;}
+	25% {margin-top: -40px;}
+	40% {margin-top: -40px;}
+	50% {margin-top: -80px;}
+	65% {margin-top: -80px;}
+	75% {margin-top: -40px;}
+	85% {margin-top: -40px;}
+	100% {margin-top: 0;}
+}
+
+
+/**
+ * select.
+ */
+/*select{
+	margin: 0;
+	font-size: 100%;
+	cursor: pointer;
+	font-weight: normal;
+	background-color: #fff;
+	color: #555;
+	display: inline-block;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;padding: 4px 6px;
+	vertical-align: middle;
+}
+select:focus{
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}*/
+
+/**
+ * 去掉点击时的边框虚线                                                                                                   .
+ */
+a, input, button {
+	outline: none;
+}
+
+/**
+ * 输入错误提示.
+ */
+.error-tips {
+	/* border: 1px solid #eee; */
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin: 10px 10px -5px 10px;
+	height: auto;
+	text-align: center;
+	color: #f00;
+}
+
+/**
+* 表单输入错误输入框样式
+*/
+.error-input {
+	background: none repeat scroll 0 0 transparent;
+    border-color: rgba(246, 132, 132, 0.8) !important;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(246, 132, 132, 0.6) !important;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(246, 132, 132, 0.6) !important;
+    -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(246, 132, 132, 0.6) !important;
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(246, 132, 132, 0.6) !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(246, 132, 132, 0.6) !important;
+    outline: medium none;
+}
+
+/**
+ * 元素不能够被选择,禁止网页部分文本不能被选择.
+ * user-select不是W3C规范中标准的CSS特性
+ * 没有前缀的user-select是被故意忽略的，因为在Web标准中根本就没有这个属性.
+ * -webkit-touch-callout可以让在移动设备上的触摸后弹出失效.
+ */
+.disable-selection {
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer */
+	-khtml-user-select: none; /* KHTML浏览器（比如：Konqueror） */
+	-webkit-user-select: none; /* Chrome, Safari, and Opera，不需要使用-o-user-select */
+	-webkit-touch-callout: none; /* Disable Android and IOS callout */	
+}
+
+/**
+* '登录中'后动态显示的三个点(基于box-shadow实现的打点效果,还可以基于border + background实现的打点效果)
+*
+* animation的step-start属性让动画不连续(渐进实现点点点等待提示效果)
+* currentColor关键字可以让图形字符化，必不可少
+*/
+.dotting {
+	display: inline-block;
+	min-width: 2px;
+	min-height: 2px;
+	-webkit-box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColr; /* for IE9+,...,3个点 */
+	-moz-box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColr; /* for IE9+,...,3个点 */
+	box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColr; /* for IE9+,...,3个点 */
+	-webkit-animation: dot 4s infinite step-start both; /* for IE10+,... */
+	-moz-animation: dot 4s infinite step-start both; /* for IE10+,... */
+	animation: dot 4s infinite step-start both; /* for IE10+,... */
+	*zoom: expression(this.innerHTML = '...'); /* for IE7 */
+}
+.dotting:before {
+	content: '...'; /* for IE8 */
+}
+.dotting::before {
+	content: ''; /* for IE9+ 覆盖 IE8 */
+}
+:root .dotting {
+	margin-right: 8px; /* for IE9+,FF,CH,OP,SF 占据空间 */
+}
+@-webkit-keyframes dot {
+	25% {
+			box-shadow: none; /* 0个点 */
+	}
+	
+	50% {
+		box-shadow: 2px 0 currentColor; /* 1个点 */
+	}
+	
+	75% {
+		box-shadow: 2px 0 currentColor, 6px 0 currentColor; /* 2个点 */
+	}
+}
+@-moz-keyframes dot {
+	25% {
+		box-shadow: none; /* 0个点 */
+	}
+	
+	50% {
+		box-shadow: 2px 0 currentColor; /* 1个点 */
+	}
+	
+	75% {
+		box-shadow: 2px 0 currentColor, 6px 0 currentColor; /* 2个点 */
+	}
+}
+@keyframes dot {
+	25% {
+		box-shadow: none; /* 0个点 */
+	}
+	
+	50% {
+		box-shadow: 2px 0 currentColor; /* 1个点 */
+	}
+	
+	75% {
+		box-shadow: 2px 0 currentColor, 6px 0 currentColor; /* 2个点 */
+	}
+}
+
+
+/**
+* 页面加载Loading.
+*/
+.main-loading {
+	background: none repeat scroll 0 0 #ccc;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 10000;
+}
+.main-loading .loading-con {
+	height: 96px;
+	left: 50%;
+	top: 50%;
+	width: 96px;
+	position: absolute;
+	margin-top: -40px;
+	margin-top: -40px;
+}
+.main-loading .loading-circle {
+	-webkit-animation: 1s linear 0s normal none infinite running spin;
+	-moz-animation: 1s linear 0s normal none infinite running spin;
+	animation: 1s linear 0s normal none infinite running spin;
+	border-color: #11994b #f2a808 #2399e7 #c0392b;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 8px;
+	height: 96px;
+	width: 96px;
+}
+.main-loading .loading-con img {
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+}
+@-webkit-keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+

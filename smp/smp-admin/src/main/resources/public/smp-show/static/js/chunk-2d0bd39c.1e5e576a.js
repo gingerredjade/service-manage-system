@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["chunk-2d0bd39c"],{"2aa8":function(e,n,t){"use strict";t.r(n);var a={name:"OpenPage"},c=t("2877"),r=Object(c.a)(a,(function(){var e=this.$createElement,n=this._self._c||e;return n("div",[n("router-view")],1)}),[],!1,null,"630d4658",null);n.default=r.exports}}]);

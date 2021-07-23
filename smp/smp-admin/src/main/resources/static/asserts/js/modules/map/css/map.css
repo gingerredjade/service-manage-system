@@ -1,0 +1,74 @@
+/* ================ tool-btns =============== */
+.tool-btns {
+    position: absolute;
+    z-index: 100;
+    right: 20px;
+
+}
+.tool-btns > div {
+    display: inline-block;
+}
+.map-tools {
+    position: relative;
+}
+.tool-panel {
+    position: absolute;
+	left: -14px;
+	top: 80px;
+	background: #fff;	
+    box-shadow: -5px 4px 4px rgba(0,0,0,.15);
+}
+.tool-panel a{
+	min-width: 90px;
+	padding: 8px 15px;
+	line-height: 28px;
+	display: inline-block;
+	letter-spacing: 1px;
+	text-align: center;
+}
+.tool-panel a:hover, .tool-panel a.active {
+	background: #4691eb;
+	color: #fff;
+}
+#geoAnalysisPanel {
+    width: 570px;
+    left: -275px;
+}
+#geoAnalysisPanel a{
+	min-width: 50px;
+	padding: 8px 5px;
+}
+
+.tool-btns > div > a{
+	background: url(../img/tool-btn.png);
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin-top: 12px;
+}
+.tool-btns > div > a:hover, .tool-btns > div > a.active{
+	background-position-x: 0;
+}
+.tool-btns .geography-analysis > a{
+	background-position: -70px 0;
+}
+.tool-btns .map-tools > a{
+	background-position: -70px -70px;
+}
+.tool-btns .data-visualize > a{
+	background-position: -70px -280px;
+}
+.tool-btns .special-map > a{
+	background-position: -70px -140px;
+}
+.tool-btns .online-plot > a{
+	background-position: -70px -210px;
+}
+
+/* ================ map-change =============== */
+.map-change {
+    position: fixed;
+    z-index: 100;
+    bottom: 60px;
+    right: 30px;
+}

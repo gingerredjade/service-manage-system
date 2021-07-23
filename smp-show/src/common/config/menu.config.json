@@ -1,0 +1,371 @@
+{
+  "header": {
+    "self": {},
+    "items": [
+      {
+        "title": "dashboard",
+        "root": true,
+        "page": "dashboard",
+        "translate": "MENU.DASHBOARD"
+      },
+      {
+        "title": "系统功能",
+        "bullet": "dot",
+        "root": true,
+        "toggle": "click",
+        "type": "mega",
+        "translate": "MENU.BUSINESS.SYSTEM_FUNCTION",
+        "submenu": [
+          {
+            "title": "权限管理",
+            "translate": "MENU.BUSINESS.AUTHORITY_MANAGEMENT",
+            "submenu": [
+              {
+                "title": "用户管理",
+                "page": "sys/user",
+                "icon": "flaticon-users",
+                "translate": "MENU.BUSINESS.USER_MANAGEMENT"
+              },
+              {
+                "title": "机构管理",
+                "page": "sys/dept",
+                "icon": "flaticon-map",
+                "translate": "MENU.BUSINESS.ORGANIZATIONAL_MANAGEMENT"
+              },
+              {
+                "title": "角色管理",
+                "page": "sys/role",
+                "icon": "flaticon-user",
+                "translate": "MENU.BUSINESS.ROLE_MANAGEMENT"
+              },
+              {
+                "title": "菜单管理",
+                "page": "sys/menu",
+                "icon": "flaticon-menu-button",
+                "translate": "MENU.BUSINESS.MENU_MANAGEMENT"
+              }
+            ]
+          },
+          {
+            "title": "系统配置",
+            "translate": "MENU.BUSINESS.SYSTEM_CONFIGURATION",
+            "submenu": [
+              {
+                "title": "字典管理",
+                "page": "sys/dict",
+                "icon": "flaticon-interface-3",
+                "translate": "MENU.BUSINESS.DICTIONARY_MANAGEMENT"
+              }
+            ]
+          },
+          {
+            "title": "系统监控",
+            "translate": "MENU.BUSINESS.SYSTEM_MONITORING",
+            "submenu": [
+              {
+                "title": "登录日志",
+                "page": "sys/loginlog",
+                "icon": "flaticon-list-2",
+                "translate": "MENU.BUSINESS.LOGIN_LOG"
+              },
+              {
+                "title": "操作日志",
+                "page": "sys/log",
+                "icon": "flaticon-list-2",
+                "translate": "MENU.BUSINESS.OPERATION_LOG"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "服务功能",
+        "bullet": "dot",
+        "root": "true",
+        "toggle": "click",
+        "type": "mega",
+        "translate": "MENU.BUSINESS.SERVICE_FUNCTION",
+        "submenu": [
+          {
+            "title": "注册",
+            "translate": "MENU.BUSINESS.REGISTER",
+            "submenu": [
+              {
+                "title": "服务风格",
+                "page": "bus/svc/style",
+                "translate": "MENU.BUSINESS.SERVICE_STYLE"
+              },
+              {
+                "title": "服务主题",
+                "page": "bus/svc/subject",
+                "translate": "MENU.BUSINESS.SERVICE_SUBJECT"
+              },
+              {
+                "title": "服务类型",
+                "page": "bus/svc/type",
+                "translate": "MENU.BUSINESS.SERVICE_TYPE"
+              },
+              {
+                "title": "服务注册",
+                "page": "bus/svc/register",
+                "translate": "MENU.BUSINESS.SERVICE_REGISTER"
+              }
+            ]
+          },
+          {
+            "title": "浏览",
+            "translate": "MENU.BUSINESS.VIEW",
+            "submenu": [
+              {
+                "title": "服务浏览",
+                "page": "bus/svc/view",
+                "translate": "MENU.BUSINESS.SERVICE_VIEW"
+              },
+              {
+                "title": "浏览全部",
+                "page": "bus/svc/view-all",
+                "translate": "MENU.BUSINESS.SERVICE_VIEW_ALL"
+              },
+              {
+                "title": "服务目录",
+                "page": "foreign/catalog",
+                "translate": "MENU.BUSINESS.SERVICE_CATALOG"
+              }
+            ]
+          },
+          {
+            "title": "审核发布",
+            "translate": "MENU.BUSINESS.AUDIT_RELEASE",
+            "submenu": [
+              {
+                "title": "服务审核",
+                "page": "bus/svc/audit",
+                "bullet": "line",
+                "translate": "MENU.BUSINESS.SERVICE_AUDIT"
+              },
+              {
+                "title": "服务发布",
+                "page": "bus/svc/release",
+                "bullet": "line",
+                "translate": "MENU.BUSINESS.SERVICE_RELEASE"
+              }
+            ]
+          },
+          {
+            "title": "统计分析",
+            "translate": "MENU.BUSINESS.STATISTIC_ANALYSE",
+            "submenu": [
+              {
+                "title": "服务种类统计",
+                "page": "statistics/svc/kind",
+                "icon": "flaticon-graphic-2",
+                "translate": "MENU.BUSINESS.SERVICE_KIND_STATISTIC"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "开放平台",
+        "bullet": "dot",
+        "root": "true",
+        "toggle": "click",
+        "type": "mega",
+        "translate": "MENU.BUSINESS.OPEN_PLATFORM",
+        "submenu": [
+          {
+            "title": "API文档",
+            "translate": "MENU.BUSINESS.API_DOCUMENTATION",
+            "submenu": [
+              {
+                "title": "接口文档",
+                "page": "",
+                "icon": "flaticon-interface-11",
+                "external": "interface_swagger",
+                "translate": "MENU.BUSINESS.SERVICE_INTERFACE_DOCUMENTATION"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "aside": {
+    "self": {},
+    "items": [
+      {
+        "title": "dashboard",
+        "root": true,
+        "icon": "flaticon2-architecture-and-city",
+        "page": "dashboard",
+        "translate": "MENU.DASHBOARD",
+        "bullet": "dot"
+      },
+      {
+        "section": "系统功能",
+        "translate": "MENU.BUSINESS.SYSTEM_FUNCTION"
+      },
+      {
+        "title": "权限管理",
+        "root": true,
+        "bullet": "dot",
+        "icon": "flaticon2-digital-marketing",
+        "translate": "MENU.BUSINESS.AUTHORITY_MANAGEMENT",
+        "submenu": [
+          {
+            "title": "用户管理",
+            "page": "sys/user",
+            "translate": "MENU.BUSINESS.USER_MANAGEMENT"
+          },
+          {
+            "title": "机构管理",
+            "page": "sys/dept",
+            "translate": "MENU.BUSINESS.ORGANIZATIONAL_MANAGEMENT"
+          },
+          {
+            "title": "角色管理",
+            "page": "sys/role",
+            "translate": "MENU.BUSINESS.ROLE_MANAGEMENT"
+          },
+          {
+            "title": "菜单管理",
+            "page": "sys/menu",
+            "translate": "MENU.BUSINESS.MENU_MANAGEMENT"
+          }
+        ]
+      },
+      {
+        "title": "系统配置",
+        "root": true,
+        "bullet": "dot",
+        "icon": "flaticon2-digital-marketing",
+        "translate": "MENU.BUSINESS.SYSTEM_CONFIGURATION",
+        "submenu": [
+          {
+            "title": "字典管理",
+            "page": "sys/dict",
+            "translate": "MENU.BUSINESS.DICTIONARY_MANAGEMENT"
+          }
+        ]
+      },
+      {
+        "title": "系统监控",
+        "root": true,
+        "bullet": "dot",
+        "icon": "flaticon2-safe",
+        "translate": "MENU.BUSINESS.SYSTEM_MONITORING",
+        "submenu": [
+          {
+            "title": "登录日志",
+            "page": "sys/loginlog",
+            "translate": "MENU.BUSINESS.LOGIN_LOG"
+          },
+          {
+            "title": "操作日志",
+            "page": "sys/log",
+            "translate": "MENU.BUSINESS.OPERATION_LOG"
+          }
+        ]
+      },
+      {
+        "section": "业务功能",
+        "translate": "MENU.BUSINESS.BUSINESS_FUNCTION"
+      },
+      {
+        "title": "服务管理",
+        "bullet": "dot",
+        "icon": "flaticon-web",
+        "translate": "MENU.BUSINESS.SERVICE_MANAGEMENT",
+        "submenu": [
+          {
+            "title": "服务风格",
+            "page": "bus/svc/style",
+            "translate": "MENU.BUSINESS.SERVICE_STYLE"
+          },
+          {
+            "title": "服务主题",
+            "page": "bus/svc/subject",
+            "translate": "MENU.BUSINESS.SERVICE_SUBJECT"
+          },
+          {
+            "title": "服务类型",
+            "page": "bus/svc/type",
+            "translate": "MENU.BUSINESS.SERVICE_TYPE"
+          },
+          {
+            "title": "服务注册",
+            "page": "bus/svc/register",
+            "translate": "MENU.BUSINESS.SERVICE_REGISTER"
+          },
+          {
+            "title": "服务审核发布",
+            "bullet": "dot",
+            "translate": "MENU.BUSINESS.SERVICE_AUDIT_RELEASE",
+            "submenu": [
+              {
+                "title": "服务审核",
+                "page": "bus/svc/audit",
+                "translate": "MENU.BUSINESS.SERVICE_AUDIT"
+              },
+              {
+                "title": "服务发布",
+                "page": "bus/svc/release",
+                "translate": "MENU.BUSINESS.SERVICE_RELEASE"
+              }
+            ]
+          },
+          {
+            "title": "服务浏览",
+            "bullet": "dot",
+            "translate": "MENU.BUSINESS.SERVICE_VIEW",
+            "submenu": [
+              {
+                "title": "浏览",
+                "page": "bus/svc/view",
+                "translate": "MENU.BUSINESS.SERVICE_VIEW"
+              },
+              {
+                "title": "浏览全部",
+                "page": "bus/svc/view-all",
+                "translate": "MENU.BUSINESS.SERVICE_VIEW_ALL"
+              },
+              {
+                "title": "服务目录",
+                "page": "foreign/catalog",
+                "translate": "MENU.BUSINESS.SERVICE_CATALOG"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "统计分析",
+        "bullet": "dot",
+        "icon": "flaticon2-graph",
+        "translate": "MENU.BUSINESS.STATISTIC_ANALYSE",
+        "submenu": [
+          {
+            "title": "服务种类统计",
+            "page": "statistics/svc/kind",
+            "translate": "MENU.BUSINESS.SERVICE_KIND_STATISTIC"
+          }
+        ]
+      },
+      {
+        "title": "开放平台",
+        "bullet": "dot",
+        "icon": "flaticon2-expand",
+        "translate": "MENU.BUSINESS.OPEN_PLATFORM",
+        "submenu": [
+          {
+            "title": "接口文档",
+            "page": "",
+            "external": "interface_swagger",
+            "translate": "MENU.BUSINESS.SERVICE_INTERFACE_DOCUMENTATION"
+          }
+        ]
+      }
+
+    ]
+  }
+}

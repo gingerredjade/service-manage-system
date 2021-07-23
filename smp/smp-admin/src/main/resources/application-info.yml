@@ -1,0 +1,17 @@
+# 项目配置说明，通过http://ip:端口/actuator/info进行查询
+info:
+  app:
+    name: @project.artifactId@
+    title: 空间信息微服务管理平台
+    description: @project.description@
+    version: @project.version@
+    termsOfServiceUrl: http://localhost:8080/
+    contact: 中国电子科技集团公司第十五研究所
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+
+
+

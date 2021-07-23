@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["chunk-2d0b341a"],{2831:function(e,n,t){"use strict";t.r(n);var c={name:"ForeignPage"},r=t("2877"),a=Object(r.a)(c,(function(){var e=this.$createElement,n=this._self._c||e;return n("div",[n("router-view")],1)}),[],!1,null,"74f30dcc",null);n.default=a.exports}}]);

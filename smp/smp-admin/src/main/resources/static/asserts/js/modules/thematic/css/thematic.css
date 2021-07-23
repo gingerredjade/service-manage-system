@@ -1,0 +1,25 @@
+/* ================ map =============== */
+body{
+	background: #253650;
+}
+html, body, #thematicMap, .page-container {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+/* ================ list =============== */
+.thematic-box{
+	background: #162e53;
+	border: 1px solid #275b7d;
+	position: absolute;
+	z-index: 1000;
+	width: 480px;
+	height: 290px;
+	-webkit-box-shadow: 0 0px 8px rgba(122, 184, 254, 0.8);
+	-moz-box-shadow: 0 0px 8px rgba(122, 184, 254, 0.8);
+	box-shadow: 0 0px 8px rgba(122, 184, 254, 0.8);
+}
+
+
+/* ================ chart =============== */

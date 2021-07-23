@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/*!
+* reader content v1.0
+*
+* Copyright 2015
+*
+* Designed and built by JiangHongyu
+*/
+
+/* 公共部分
+   ========================================================================== */
+
+/**
+ * service info show item group.
+ */
+
+/**
+ * 处理文字溢出和破字.
+ */
+.text-ellipsis {
+    overflow: hidden; /* 不允许出现滚动条 */
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; /* 显示省略号来代表被修剪的文本（clip:修剪文本；string：用给定的字符串来代表被修剪的文本） */
+    white-space: nowrap; /* 文本不进行换行 */
+}

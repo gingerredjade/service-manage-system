@@ -1,0 +1,50 @@
+server:
+  port: 8998
+  tomcat:
+    uri-encoding: UTF-8
+    # tomcat虚拟路径
+    basedir: show/tomcat
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: smp-admin
+  profiles:
+    include: info,business,mysql
+  cloud:
+    service-registry:
+      auto-registration:
+        enabled: true
+  thymeleaf:
+    mode: HTML5
+    cache: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#      #defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+#  instance:
+#    # 是否将自己的IP注册到Server，不设或设为false将OS的hostname注册到Server
+#    prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+#    metadata-map:
+#      name: gis-service-show
+#      title: 空间信息微服务管理平台
+#      description: 空间信息微服务管理平台，地理信息在线服务中心，提供服务浏览、二次开发接口浏览等功能
+#      version: 1.0.0
+#      contact: 中国电子科技集团公司第十五研究所
+#    lease-renewal-interval-in-seconds: 1
+#    lease-expiration-duration-in-seconds: 2
+
+
+

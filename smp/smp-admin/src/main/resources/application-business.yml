@@ -1,0 +1,8 @@
+# 业务相关的拓展配置
+
+# picture configure
+preread:
+  upload-path: E:/gis-service-show/preview/
+
+
+
